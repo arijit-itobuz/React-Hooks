@@ -1,4 +1,7 @@
 const routes = {
+  notFound: {
+    fullPath: '*',
+  },
   home: {
     fullPath: '/',
   },
@@ -10,6 +13,12 @@ const routes = {
   },
   useRefPage: {
     fullPath: '/hooks/useRefPage',
+  },
+  useMemoPage: {
+    fullPath: '/hooks/useMemoPage',
+  },
+  useReducerPage: {
+    fullPath: '/hooks/useReducerPage',
   },
 };
 
