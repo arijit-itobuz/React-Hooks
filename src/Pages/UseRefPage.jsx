@@ -8,7 +8,6 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function UseRefPage() {
   const [value, setValue] = useState('');
-  const [value2, setValue2] = useState('');
   const [renderCount, setRenderCount] = useState(0);
   const refRenderCount = useRef(0);
   const inputRef = useRef(null);
@@ -16,19 +15,19 @@ export default function UseRefPage() {
 
   // run only one useEffect at time of demo
 
-  // useEffect(() => {
-  //   setRenderCount((e) => e + 1);
-  // }, [value]);
+  useEffect(() => {
+    setRenderCount((e) => e + 1);
+  }, [value]);
 
-  // useEffect(() => {
-  //   refRenderCount.current = refRenderCount.current + 1;
-  // });
+  useEffect(() => {
+    refRenderCount.current = refRenderCount.current + 1;
+  });
 
-  // useEffect(() => {
-  //   console.log('value: ', value);
-  //   prevValue.current = value;
-  //   console.log('prevValue: ', prevValue);
-  // }, [value]);
+  useEffect(() => {
+    console.log('value: ', value);
+    prevValue.current = value;
+    console.log('prevValue: ', prevValue);
+  }, [value]);
 
   const focus = () => {
     console.log(inputRef);
